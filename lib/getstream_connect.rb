@@ -26,6 +26,12 @@ class GetStreamConnect
   end
 
   # @return [void]
+  def generate_user_token(username:)
+    token = client.create_token(username)
+    token
+  end
+
+  # @return [void]
   def create_channel(members:, slug:)
     return if slug.nil? || members.empty?
 
